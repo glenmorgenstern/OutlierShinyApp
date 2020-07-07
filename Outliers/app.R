@@ -1,11 +1,3 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 
 library(shiny)
 
@@ -13,19 +5,21 @@ library(shiny)
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("How to Identify and Deal with Outliers"),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
+            helpText("On the right, you see a simple linear model relating median household income and value added by businesses. 
+                     Toggle the checkboxes below to remove some data points from the model."),
+            checkboxGroupInput("remove",
+                        "Click to remove:",
+                        c("Middle Income Outliers" = "mid",
+                          "High Income Outliers" = "high")),
+            "Statisticians have established thresholds to define outliers. They depend on measures described below. Click below to learn how to easily calculate these measures and determine outliers."
         ),
 
-        # Show a plot of the generated distribution
+        # Show a plot of the generated model
         mainPanel(
            plotOutput("distPlot")
         )
