@@ -3,11 +3,11 @@ library(shiny)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-
-    # Application title
     titlePanel("How to Identify and Deal with Outliers"),
+    navbarPage("Navbar!",
+    tabPanel("Identify Outliers",
 
-    # Sidebar with a slider input for number of bins 
+    # Sidebar with checkboxes
     sidebarLayout(
         sidebarPanel(
             helpText("On the right, you see a simple linear model relating median household income and value added by businesses. 
@@ -16,26 +16,30 @@ ui <- fluidPage(
                         "Click to remove:",
                         c("Middle Income Outliers" = "mid",
                           "High Income Outliers" = "high")),
-            "Statisticians have established thresholds to define outliers. They depend on measures described below. Click below to learn how to easily calculate these measures and determine outliers."
+            "Statisticians have established thresholds to define outliers. They depend on measures described below. Click below to learn how to easily calculate these measures and determine outliers."),
+            # Show a plot of the generated model
+            mainPanel(
+                plotOutput("modelTab1")
+            )
+        ), #end of first tab
         ),
-
-        # Show a plot of the generated model
-        mainPanel(
-           plotOutput("distPlot")
+        
+    tabPanel("Solutions for Outliers",
+        sidebarLayout(
+            sidebarPanel(
+                "Stuff for second tab"
+            ),
+            mainPanel()
         )
-    )
+    ) #end of second tab
+)
 )
 
-# Define server logic required to draw a histogram
+# Define server logic required to draw model
 server <- function(input, output) {
 
-    output$distPlot <- renderPlot({
-        # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
-        bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-        # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white')
+    output$modelTab1 <- renderPlot({
+        
     })
 }
 
