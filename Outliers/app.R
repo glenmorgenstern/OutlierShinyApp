@@ -10,6 +10,22 @@ initial <- read_csv("data/airqedited.csv")
 ui <- fluidPage(
     titlePanel("How to Identify and Deal with Outliers"),
     navbarPage("Tabs",
+    tabPanel("About",
+        fluidRow(
+            column(3,
+                   h3("About")
+                   )
+        ), # end of title row
+        fluidRow(
+            column(6,
+                h5("This tab contains the first part of info.")
+            ),
+            column(6,
+                   h5("This contains the second part of about info.")
+                   )
+        ) #end of second row
+    ), #end of first tab
+    
     tabPanel("Identify Outliers",
 
     # Sidebar with checkboxes
@@ -24,19 +40,37 @@ ui <- fluidPage(
             ),
             # Show a plot of the generated model
             mainPanel(
-                plotOutput("modelTab1")
+                plotOutput("modelTab2")
             )
-        ), #end of first tab
+        ) 
+        ), #end of second tab
+    
+    tabPanel("Measuring Outliers",
+        sidebarLayout(
+            sidebarPanel(
+            helpText("Toggle the radio buttons to learn how to calculate measures for outliers and what they mean."),
+            radioButtons("measure",
+                         "Choose your measure:",
+                         c("Cook's Distance" = "cooksDistance",
+                           "Standardized residuals" = "standardizedResiduals",
+                           "Leverage" = "leverage"
+                         ))
         ),
-        
+        mainPanel(
+            plotOutput("measuresTab3"),
+            textOutput("measureExplanation")
+        )
+        )
+    ), #end of third tab
+    
     tabPanel("Solutions for Outliers",
         sidebarLayout(
             sidebarPanel(
-                "Stuff for second tab"
+                "Potential solutions in this tab"
             ),
             mainPanel()
         )
-    ), #end of second tab
+    ), #end of fourth tab
     tabPanel("Quiz",
         "Insert Quiz"
     )
