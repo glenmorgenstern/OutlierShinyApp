@@ -21,7 +21,7 @@ ui <- fluidPage(
                         "Click to remove:",
                         c("Middle Income Outliers" = "mid",
                           "High Income Outliers" = "high")),
-            "Statisticians have established thresholds to define outliers. They depend on measures described below. Click below to learn how to easily calculate these measures and determine outliers."),
+            ),
             # Show a plot of the generated model
             mainPanel(
                 plotOutput("modelTab1")
