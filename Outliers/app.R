@@ -4,6 +4,7 @@ library(tidyverse)
 library(dplyr)
 library(ggthemes)
 
+initial <- read_csv("data/airqedited.csv")
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
