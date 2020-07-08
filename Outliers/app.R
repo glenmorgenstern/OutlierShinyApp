@@ -8,7 +8,7 @@ library(ggthemes)
 # Define UI for application that draws a histogram
 ui <- fluidPage(
     titlePanel("How to Identify and Deal with Outliers"),
-    navbarPage("Navbar!",
+    navbarPage("Tabs",
     tabPanel("Identify Outliers",
 
     # Sidebar with checkboxes
