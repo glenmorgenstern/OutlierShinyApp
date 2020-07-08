@@ -35,7 +35,10 @@ ui <- fluidPage(
             ),
             mainPanel()
         )
-    ) #end of second tab
+    ), #end of second tab
+    tabPanel("Quiz",
+        "Insert Quiz"
+    )
 )
 )
 
