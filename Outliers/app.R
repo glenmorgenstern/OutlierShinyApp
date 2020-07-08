@@ -80,8 +80,11 @@ ui <- fluidPage(
 # Define server logic required to draw model
 server <- function(input, output) {
 
-    output$modelTab1 <- renderPlot({
-        
+    output$modelTab2 <- renderPlot({
+        ggplot(data=initial, aes(x=medi, y=vala)) + geom_point() + 
+            labs(title = "Business Value Added vs. Median Income",
+                 x = "Median Household Income", y = "Business Value Added") + 
+            geom_smooth(method = "lm", se = FALSE) + theme_economist()
     })
 }
 
