@@ -13,15 +13,21 @@ ui <- fluidPage(
     tabPanel("About",
         fluidRow(
             column(3,
-                   h3("About")
+                   h2("About")
                    )
         ), # end of title row
         fluidRow(
+            "In this app, you will learn methods for recognizing and treating outliers in your data.
+            These include:"
+        ),
+        fluidRow(
             column(6,
-                h5("This tab contains the first part of info.")
+                h5("Identifying Outliers \n"),
+
             ),
             column(6,
-                   h5("This contains the second part of about info.")
+                   h5("This contains the second part of about info."),
+
                    )
         ) #end of second row
     ), #end of first tab
@@ -85,6 +91,8 @@ server <- function(input, output) {
             labs(title = "Business Value Added vs. Median Income",
                  x = "Median Household Income", y = "Business Value Added") + 
             geom_smooth(method = "lm", se = FALSE) + theme_economist()
+        
+     
     })
 }
 
