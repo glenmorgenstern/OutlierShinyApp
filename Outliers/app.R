@@ -49,7 +49,7 @@ ui <- fluidPage(
             ),
             # Show a plot of the generated model
             mainPanel(
-                plotOutput("modelTab2")
+                plotOutput("outlierGraph")
             )
         ) 
         ), #end of second tab
@@ -66,7 +66,7 @@ ui <- fluidPage(
                          ))
         ),
         mainPanel(
-            plotOutput("measuresTab3"),
+            plotOutput("measuresGraph"),
             textOutput("measureExplanation")
         )
         )
@@ -82,7 +82,9 @@ ui <- fluidPage(
                                      "Remove High Income Outliers" = "high4",
                                      "Log Transform the Data" = "logTransform"))
             ),
-            mainPanel()
+            mainPanel(
+                plotOutput("solutionsGraph")
+            )
         )
     ), #end of fourth tab
     tabPanel("Quiz",
