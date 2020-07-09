@@ -5,9 +5,9 @@ library(dplyr)
 library(ggthemes)
 
 initial <- read.csv("data/airqedited.csv")
-noHighIncome <- read.csv("data/airq-no-high-income")
-noMediumIncome <- read.csv("data/airq-no-medium-income")
-noOutliers <- read.csv("data/airq-no-outliers")
+noHighIncome <- read.csv("data/airq-no-high-income.csv")
+noMediumIncome <- read.csv("data/airq-no-medium-income.csv")
+noOutliers <- read.csv("data/airq-no-outliers.csv")
 
 # Define UI for application
 ui <- fluidPage(
