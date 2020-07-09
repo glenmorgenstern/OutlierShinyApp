@@ -96,7 +96,7 @@ ui <- fluidPage(
 # Define server logic required to draw model
 server <- function(input, output) {
 
-    output$modelTab2 <- renderPlot({
+    output$outlierGraph <- renderPlot({
         ggplot(data=initial, aes(x=medi, y=vala)) + geom_point() + 
             labs(title = "Business Value Added vs. Median Income",
                  x = "Median Household Income", y = "Business Value Added") + 
