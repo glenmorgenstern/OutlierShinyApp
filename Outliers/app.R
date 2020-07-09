@@ -44,8 +44,8 @@ ui <- fluidPage(
                      Toggle the checkboxes below to remove some data points from the model."),
             checkboxGroupInput("remove",
                         "Click to remove:",
-                        c("Middle Income Outliers" = "mid",
-                          "High Income Outliers" = "high")),
+                        c("Middle Income Outliers" = "mid2",
+                          "High Income Outliers" = "high2")),
             ),
             # Show a plot of the generated model
             mainPanel(
@@ -75,7 +75,12 @@ ui <- fluidPage(
     tabPanel("Solutions for Outliers",
         sidebarLayout(
             sidebarPanel(
-                "Potential solutions in this tab"
+                helpText("Help text here"),
+                checkboxGroupInput("solution",
+                                   "Click to perform the indicated action on the model:",
+                                   c("Remove Middle Income Outlier" = "mid4",
+                                     "Remove High Income Outliers" = "high4",
+                                     "Log Transform the Data" = "logTransform"))
             ),
             mainPanel()
         )
