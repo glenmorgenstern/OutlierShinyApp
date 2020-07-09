@@ -66,7 +66,7 @@ ui <- fluidPage(
                          ))
         ),
         mainPanel(
-            plotOutput("measuresGraph"),
+            plotOutput("measureGraph"),
             textOutput("measureExplanation")
         )
         )
