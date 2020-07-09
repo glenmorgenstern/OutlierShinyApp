@@ -4,9 +4,12 @@ library(tidyverse)
 library(dplyr)
 library(ggthemes)
 
-initial <- read_csv("data/airqedited.csv")
+initial <- read.csv("data/airqedited.csv")
+noHighIncome <- read.csv("data/airq-no-high-income")
+noMediumIncome <- read.csv("data/airq-no-medium-income")
+noOutliers <- read.csv("data/airq-no-outliers")
 
-# Define UI for application that draws a histogram
+# Define UI for application
 ui <- fluidPage(
     titlePanel("How to Identify and Deal with Outliers"),
     navbarPage("Tabs",
