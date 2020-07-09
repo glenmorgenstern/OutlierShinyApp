@@ -29,7 +29,7 @@ ui <- fluidPage(
 
             ),
             column(6,
-                   h5("This contains the second part of about info."),
+                   h5("Dealing with Outliers"),
 
                    )
         ) #end of second row
